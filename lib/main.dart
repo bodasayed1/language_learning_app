@@ -1,22 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:language_learnig_app/screens/home_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyLearningApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyLearningApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Home());
-  }
-}
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Container(color: Colors.amber)),
-    );
+    return MaterialApp(home: Home(), debugShowCheckedModeBanner: false);
   }
 }
