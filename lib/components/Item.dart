@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:language_learnig_app/model/number.dart';
+import 'package:language_learnig_app/model/language_item_model.dart';
 
 class Item extends StatelessWidget {
-  final Number number;
+  final LanguageItemModel number;
   const Item({super.key, required this.number});
 
   @override
@@ -18,7 +18,7 @@ class Item extends StatelessWidget {
       width: double.infinity,
       child: Row(
         children: [
-          Image.asset(number.image),
+          Image(image: AssetImage(number.image)),
           Spacer(flex: 4),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -40,7 +40,10 @@ class Item extends StatelessWidget {
           ),
           Spacer(flex: 6),
           IconButton(
-            onPressed: () {},
+            splashColor: Colors.blue,
+            onPressed: () {
+              number.playSound();
+            },
             icon: Icon(Icons.headphones, color: Colors.white),
           ),
         ],
